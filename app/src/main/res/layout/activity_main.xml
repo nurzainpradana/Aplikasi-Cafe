@@ -20,6 +20,7 @@
         android:layout_height="wrap_content"
         android:text="Selamat Datang"
         android:textAlignment="center"
+        android:layout_marginTop="24dp"
         android:textSize="24sp"/>
     <Button
         android:id="@+id/btn_daftar_menu"
@@ -27,11 +28,6 @@
         android:layout_height="wrap_content"
         android:onClick="keDaftarMenu"
         android:text="Daftar Menu"/>
-    <Button
-        android:id="@+id/btn_buat_pesanan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Buat Pesanan"/>
     <Button
         android:id="@+id/btn_lihat_pesanan"
         android:layout_width="match_parent"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cream"
-    tools:context=".view.pesanan.LihatPesanan">
+    tools:context=".view.pesanan.BuatPesanan">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,7 +18,7 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:textAlignment="center"
-            android:text="Detail Pesanan"/>
+            android:text="Buat Pesanan"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -27,14 +27,13 @@
             android:layout_marginTop="8dp"
             android:textStyle="italic"
             android:text="Kode Pesanan"/>
-        <TextView
-            android:id="@+id/tv_kode_pesanan"
+        <EditText
+            android:id="@+id/et_kode_pesanan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
             android:layout_marginTop="8dp"
-            android:textStyle="bold"
-            tools:text="Kode Pesanan"/>
+            android:inputType="text"
+            android:hint="Kode Pesanan"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -43,14 +42,13 @@
             android:layout_marginTop="8dp"
             android:textStyle="italic"
             android:text="Tanggal Pesan"/>
-        <TextView
-            android:id="@+id/tv_tanggal_pesan"
+        <EditText
+            android:id="@+id/et_tanggal_pesan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
             android:layout_marginTop="8dp"
-            android:textStyle="bold"
-            tools:text="Tanggal Pesan"/>
+            android:inputType="date"
+            android:hint="Tanggal Pesan"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -59,14 +57,13 @@
             android:layout_marginTop="8dp"
             android:textStyle="italic"
             android:text="Jam Pesan"/>
-        <TextView
-            android:id="@+id/tv_jam_pesan"
+        <EditText
+            android:id="@+id/et_jam_pesan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
             android:layout_marginTop="8dp"
-            android:textStyle="bold"
-            tools:text="Jam Pesan"/>
+            android:inputType="time"
+            android:hint="Jam Pesan"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -75,19 +72,15 @@
             android:layout_marginTop="8dp"
             android:textStyle="italic"
             android:text="Nomor Meja"/>
-        <TextView
-            android:id="@+id/tv_nomor_meja"
-            android:layout_width="wrap_content"
+
+        <EditText
+            android:id="@+id/et_nomor_meja"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textColor="@color/cream"
             android:layout_marginTop="8dp"
-            android:textStyle="bold"
             android:padding="8dp"
-            android:background="@drawable/bg_radius_brown"
-            tools:text="1"/>
-
-
+            android:inputType="number"
+            android:hint="Nomor Meja" />
 
         <TextView
             android:layout_width="match_parent"
@@ -96,14 +89,13 @@
             android:layout_marginTop="8dp"
             android:textStyle="italic"
             android:text="Nama Menu"/>
-        <TextView
-            android:id="@+id/tv_nama_menu"
+        <EditText
+            android:id="@+id/et_nama_menu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
             android:layout_marginTop="8dp"
-            android:textStyle="bold"
-            tools:text="Nama Menu"/>
+            android:inputType="text"
+            android:hint="Nama Menu"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -112,14 +104,13 @@
             android:layout_marginTop="8dp"
             android:textStyle="italic"
             android:text="Harga Menu"/>
-        <TextView
-            android:id="@+id/tv_harga_menu"
+        <EditText
+            android:id="@+id/et_harga_menu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
             android:layout_marginTop="8dp"
-            android:textStyle="bold"
-            tools:text="Harga Menu"/>
+            android:inputType="number"
+            android:hint="Harga Menu"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -127,40 +118,25 @@
             android:layout_marginTop="8dp"
             android:textStyle="italic"
             android:text="Quantity"/>
-        <TextView
-            android:id="@+id/tv_qty"
+        <EditText
+            android:id="@+id/et_qty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
             android:layout_marginTop="8dp"
-            android:textStyle="bold"
-            tools:text="Quantity"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:layout_marginTop="8dp"
-            android:textStyle="italic"
-            android:text="Total"/>
-        <TextView
-            android:id="@+id/tv_total"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:layout_marginTop="8dp"
-            android:textStyle="bold"
-            tools:text="Total"/>
+            android:inputType="number"
+            android:hint="Quantity"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:onClick="selesaiDanHapus"
-            android:text="Selesai &amp; Hapus Pesanan"/>
+            android:onClick="simpan"
+            android:text="Simpan"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:onClick="keDaftarMenu"
+            android:backgroundTint="@color/dark_brown"
+            android:onClick="kembali"
             android:text="Kembali"/>
     </LinearLayout>
 

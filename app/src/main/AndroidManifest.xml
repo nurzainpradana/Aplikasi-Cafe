@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AplikasiMenuCafe">
-        <activity android:name=".view.pesanan.DaftarPesanan"></activity>
+        <activity android:name=".view.pesanan.BuatPesanan"></activity>
+        <activity android:name=".view.pesanan.DaftarPesanan" />
         <activity android:name=".view.pesanan.LihatPesanan" />
         <activity android:name=".view.menu.LihatMenu" />
         <activity android:name=".view.menu.DaftarMenu" />
@@ -20,6 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

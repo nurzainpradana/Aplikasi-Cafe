@@ -4,6 +4,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.media.Image;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 
 import com.zainpradana.aplikasimenucafe.R;
 import com.zainpradana.aplikasimenucafe.database.DataHelper;
+import com.zainpradana.aplikasimenucafe.view.pesanan.BuatPesanan;
 
 import java.text.NumberFormat;
 import java.util.Locale;
@@ -35,6 +37,9 @@ public class LihatMenu extends AppCompatActivity {
     DataHelper dbHelper;
     TextView tvNamaMenu, tvJenisMenu, tvHargaMenu, tvPenjelasanMenu;
     ImageView ivGambarMenu;
+
+    String namaMenu;
+    double harga;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -59,10 +64,12 @@ public class LihatMenu extends AppCompatActivity {
 
         if (cursor.getCount() > 0){
             cursor.moveToPosition(0);
-            tvNamaMenu.setText(cursor.getString(2));
+            namaMenu = cursor.getString(2);
+
+            tvNamaMenu.setText(namaMenu);
             tvJenisMenu.setText(cursor.getString(1));
 
-            double harga = Double.parseDouble(cursor.getString(4));
+            harga = Double.parseDouble(cursor.getString(4));
             tvHargaMenu.setText(formatRupiah.format(harga));
             tvPenjelasanMenu.setText(cursor.getString(3));
 
@@ -116,5 +123,13 @@ public class LihatMenu extends AppCompatActivity {
 
     public void keDaftarMenu(View view) {
         onBackPressed();
+    }
+
+    public void keBuatPesanan(View view) {
+        Intent i = new Intent(LihatMenu.this, BuatPesanan.class);
+        i.putExtra("nama_menu_key", namaMenu);
+        i.putExtra("harga_menu_key", harga);
+        startActivity(i);
+        finish();
     }
 }

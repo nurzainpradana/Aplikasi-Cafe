@@ -13,11 +13,10 @@ import android.widget.ListView;
 
 import com.zainpradana.aplikasimenucafe.R;
 import com.zainpradana.aplikasimenucafe.database.DataHelper;
-import com.zainpradana.aplikasimenucafe.view.pesanan.LihatPesanan;
 
 
 public class DaftarPesanan extends AppCompatActivity {
-    public static DaftarPesanan dm;
+    public static DaftarPesanan dp;
     protected Cursor cursor;
     String[] daftarKodePesanan;
     ListView listViewDaftarPesanan;
@@ -28,7 +27,7 @@ public class DaftarPesanan extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daftar_pesanan);
 
-        dm = this;
+        dp = this;
         dbCenter = new DataHelper(this);
         RefreshList();
     }
