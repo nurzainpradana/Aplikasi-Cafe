@@ -57,19 +57,20 @@ public class BuatPesanan extends AppCompatActivity {
     }
 
     public void simpan(View view) {
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
-        db.execSQL("insert into pesanan(kd_pesanan, tanggal, jam, nomor_meja, nama_menu, harga, qty) values('" +
-                etKodePesanan.getText().toString() + "','" +
-                etTanggalPesan.getText().toString() + "','" +
-                etJamPesan.getText().toString() + "','" +
-                etNomorMeja.getText().toString() + "','" +
-                etNamaMenu.getText().toString() + "','" +
-                etHargaMenu.getText().toString() + "','" +
-                etQty.getText().toString() + "');");
-        Toast.makeText(getApplicationContext(), "Berhasil" ,
-                Toast.LENGTH_LONG).show();
-        dp.RefreshList();
-        finish();
+        if (etKodePesanan.getText().toString() != "" && etNomorMeja.getText().toString() != "" && etQty.getText().toString() != ""){
+            SQLiteDatabase db = dbHelper.getWritableDatabase();
+            db.execSQL("insert into pesanan(kd_pesanan, tanggal, jam, nomor_meja, nama_menu, harga, qty) values('" +
+                    etKodePesanan.getText().toString() + "','" +
+                    etTanggalPesan.getText().toString() + "','" +
+                    etJamPesan.getText().toString() + "','" +
+                    etNomorMeja.getText().toString() + "','" +
+                    etNamaMenu.getText().toString() + "','" +
+                    etHargaMenu.getText().toString() + "','" +
+                    etQty.getText().toString() + "');");
+            Toast.makeText(getApplicationContext(), "Berhasil" ,
+                    Toast.LENGTH_LONG).show();
+            dp.RefreshList();
+        }
     }
 
     public void kembali(View view) {
