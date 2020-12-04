@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:background="@color/cream"
-    tools:context=".MainActivity">
+    tools:context=".view.halamanutama.MainActivity">
 
     <ImageView
         android:layout_width="130dp"
@@ -25,6 +25,7 @@
         android:id="@+id/btn_daftar_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="keDaftarMenu"
         android:text="Daftar Menu"/>
     <Button
         android:id="@+id/btn_buat_pesanan"
@@ -35,5 +36,6 @@
         android:id="@+id/btn_lihat_pesanan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="keDaftarPesanan"
         android:text="Lihat Daftar Pesanan"/>
 </LinearLayout>

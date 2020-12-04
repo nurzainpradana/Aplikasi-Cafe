@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AplikasiMenuCafe">
-        <activity android:name=".MainActivity">
+        <activity android:name=".view.pesanan.DaftarPesanan"></activity>
+        <activity android:name=".view.pesanan.LihatPesanan" />
+        <activity android:name=".view.menu.LihatMenu" />
+        <activity android:name=".view.menu.DaftarMenu" />
+        <activity android:name=".view.halamanutama.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

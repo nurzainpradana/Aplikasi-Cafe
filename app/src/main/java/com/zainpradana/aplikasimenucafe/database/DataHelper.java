@@ -24,10 +24,14 @@ public class DataHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO menu (kd_menu, jenis, nama, penjelasan, harga) VALUES (1006, 'Makanan', 'Nasi Goreng', 'Nasi Goreng Ayam disajikan dengan telur mata sapi disertai satai ayam', 50000)");
         db.execSQL("INSERT INTO menu (kd_menu, jenis, nama, penjelasan, harga) VALUES (1007, 'Dessert', 'Cheese Cake', 'Kue Tart 1 slice dengan bahan utama cream cheese dengan topping buah-buahan asli seperti anggur, jeruk , kiwi', 40000)");
         db.execSQL("INSERT INTO menu (kd_menu, jenis, nama, penjelasan, harga) VALUES (1008, 'Dessert', 'Black Salad', 'Potongan buah-buah segar yang terdiri dari Pepaya, Jambu, Melon, dan Mangga disajikan dengan bumbu rujak kacang pedas dan gula merah', 30000)");
+
+        db.execSQL("CREATE TABLE pesanan (kd_pesanan integer NOT NULL PRIMARY KEY, tanggal date NOT NULL, jam time NOT NULL, nomor_meja int NOT NULL, nama_menu text NOT NULL, harga integer NOT NULL)");
+        db.execSQL("INSERT INTO pesanan (kd_pesanan, tanggal, jam, nomor_meja, nama_menu, harga) VALUES (2001, '2020-12-04', '10:59', 2 , 'Kopi Hitam', 10000)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-
+        db.execSQL("DROP  TABLE menu");
+        db.execSQL("DROP TABLE pesanan");
     }
 }
